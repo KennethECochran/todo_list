@@ -31,33 +31,33 @@
         </dialog>
     </div>
     <div id="contentBody">
-        <button id="+todo">+todo</button>
         <dialog id="todoform">
             <form method="dialog">
-                <p>Add a Book to Your Library!</p>
-                <label for="title">Title:</label>
-                <input type="text" id="title" name="title">
-                <label for="author">Description:</label>
-                <input type="text" id="author" name="author">
-                <label for="pageNum">Due Date:</label>
-                <input type="number" id="pageNum" name="pageNum">
+                <p>Add a ToDo to Your Project: </p>
+                <label for="toDoTitle">Title:</label>
+                <input type="text" id="toDoTitle" name="toDoTitle">
+                <label for="description">Description:</label>
+                <input type="text" id="description" name="description">
+                <label for="date">Due Date:</label>
+                <input type="date" id="date" name="date">
                     <div class="radioButtons">
                         <div class="top">
-                            <input type="radio" id="hasRead" name="readStatus" value="True">
-                            <label for="hasRead">High Priority</label>
+                            <input type="radio" id="highPriority" name="priorityStatus" value="True">
+                            <label for="highPriority">High Priority</label>
                         </div>
                         
                         <div class="bottom">
-                            <input type="radio" id="notRead" name="readStatus" value="False" checked>
-                            <label for="notRead">Low Priority</label>
+                            <input type="radio" id="lowPriority" name="priorityStatus" value="False" checked>
+                            <label for="lowPriority">Low Priority</label>
                         </div>
                     </div>
                 <div class="buttonContainer">
-                    <button id="confirmBtn" value="default">Confirm</button>
+                    <button id="confirmToDoBtn" value="default">Confirm</button>
                     <button id="cancel">Cancel</button>
                 </div>
             </form>
         </dialog>
+        <div id="toDoHolder"></div>
     </div>
 </body>
 </html>
