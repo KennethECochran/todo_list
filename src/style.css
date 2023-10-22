@@ -28,3 +28,9 @@ body{
     grid-column: 2/3;
     grid-row: 2/3;
 }
+
+.card{
+    width: 200px;
+    height: 200px;
+    background-color: aqua;
+}
