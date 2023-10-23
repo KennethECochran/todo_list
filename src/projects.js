@@ -52,6 +52,8 @@ function displayToDo(taskList){
         toDoObject.classList.add('card');
         //toDoObject.setAttribute('priority', `${book.read}`)
         const toDoTitle = document.createElement('div');
+        const hoverElements = document.createElement('div');
+        hoverElements.classList.add('toDoDetails');
         const toDoDesc = document.createElement('div');
         const toDoDueDate = document.createElement('div');
         const removeButton = document.createElement('button')
@@ -71,10 +73,11 @@ function displayToDo(taskList){
             //changeReadStatus.textContent = "Mark as Read"
         //}
         toDoObject.appendChild(toDoTitle);
-        toDoObject.appendChild(toDoDesc);
-        toDoObject.appendChild(toDoDueDate);
-        toDoObject.appendChild(removeButton);
-        toDoObject.appendChild(changeReadStatus);
+        hoverElements.appendChild(toDoDesc);
+        hoverElements.appendChild(toDoDueDate);
+        hoverElements.appendChild(removeButton);
+        hoverElements.appendChild(changeReadStatus);
+        toDoObject.appendChild(hoverElements);
         container.append(toDoObject);
         i+=1;
     }
