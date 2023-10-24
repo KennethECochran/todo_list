@@ -1,6 +1,6 @@
 const sideBar = document.getElementById('projectLinks');
 const projectList = [];
-const docBody = document.getElementById('contentBody');
+const docBody = document.getElementById('btnHolder');
 
 function createProject(name){
     let title = name;
@@ -49,34 +49,32 @@ function displayToDo(taskList){
     for(let element of taskList){
         const container = document.querySelector('#toDoHolder');
         const toDoObject = document.createElement('div');
+        const buttonHolders = document.createElement('div')
+        buttonHolders.classList.add('btnHolders')
         toDoObject.classList.add('card');
-        //toDoObject.setAttribute('priority', `${book.read}`)
+        toDoObject.setAttribute('data-priority', `${element.priority}`)
         const toDoTitle = document.createElement('div');
         const hoverElements = document.createElement('div');
         hoverElements.classList.add('toDoDetails');
         const toDoDesc = document.createElement('div');
         const toDoDueDate = document.createElement('div');
         const removeButton = document.createElement('button')
-        const changeReadStatus = document.createElement('button')
+        const changePriority = document.createElement('button')
         removeButton.classList.add('remove')
         removeButton.setAttribute('index', `${i}`)
-        changeReadStatus.classList.add('changeStatus')
-        changeReadStatus.setAttribute('index', `${i}`)
-        toDoTitle.textContent = `Title: ${element.name}`;
-        toDoDesc.textContent = `Description: ${element.description}`;
+        changePriority.classList.add('changePriority')
+        changePriority.setAttribute('index', `${i}`)
+        toDoTitle.textContent = `${element.name}`;
+        toDoDesc.textContent = `Notes: ${element.description}`;
         toDoDueDate .textContent = `Due Date: ${element.dueDate}`;
         removeButton.textContent = 'Remove ToDo'
-        //if(book.read == 'True'){
-            //changeReadStatus.textContent = 'Mark as Unread'
-        //}
-        //else{
-            //changeReadStatus.textContent = "Mark as Read"
-        //}
+        changePriority.textContent = 'Change Priority'
         toDoObject.appendChild(toDoTitle);
         hoverElements.appendChild(toDoDesc);
         hoverElements.appendChild(toDoDueDate);
-        hoverElements.appendChild(removeButton);
-        hoverElements.appendChild(changeReadStatus);
+        buttonHolders.appendChild(removeButton);
+        buttonHolders.appendChild(changePriority);
+        toDoObject.appendChild(buttonHolders)
         toDoObject.appendChild(hoverElements);
         container.append(toDoObject);
         i+=1;

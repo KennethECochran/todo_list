@@ -15,7 +15,7 @@
         </div>
     </div>
     <div id="sidebar">
-        <button id="addProject">+project</button>
+        <button id="addProject">+ Project</button>
         <div id="projectLinks">
         </div>
         <dialog id="projectForm">
@@ -31,22 +31,29 @@
         </dialog>
     </div>
     <div id="contentBody">
+        <div id="btnHolder"></div>
         <dialog id="todoform">
             <form method="dialog">
                 <p>Add a ToDo to Your Project: </p>
+                <div class="holder">
+                <div class="top">
                 <label for="toDoTitle">Title:</label>
+                <label for="description">Notes:</label>
+                <label for="date">Date:</label>
+                </div>
+                <div class="bottom">
                 <input type="text" id="toDoTitle" name="toDoTitle">
-                <label for="description">Description:</label>
                 <input type="text" id="description" name="description">
-                <label for="date">Due Date:</label>
                 <input type="date" id="date" name="date">
+                </div>  
+                </div>
                     <div class="radioButtons">
-                        <div class="top">
+                        <div class="upper">
                             <input type="radio" id="highPriority" name="priorityStatus" value="True">
                             <label for="highPriority">High Priority</label>
                         </div>
                         
-                        <div class="bottom">
+                        <div class="lower">
                             <input type="radio" id="lowPriority" name="priorityStatus" value="False" checked>
                             <label for="lowPriority">Low Priority</label>
                         </div>

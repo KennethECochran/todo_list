@@ -51,3 +51,28 @@ document.addEventListener('click', e =>{
         displayToDo(projectList[dataAttribute].tasks)
     }
 })
+
+document.addEventListener('click', e => {
+    if(e.target.matches('.remove')){
+        const projectSelector = document.querySelector('.addToDo')
+        const projectTarget = projectSelector.getAttribute('data-index')
+        const toDoToRemove = e.target.getAttribute('index')
+        projectList[projectTarget].tasks.splice(toDoToRemove, 1);
+        displayToDo(projectList[projectTarget].tasks);
+    }
+})
+
+document.addEventListener("click", e => {
+    if(e.target.matches('.changePriority')) {
+        const projectSelector = document.querySelector('.addToDo')
+        const projectTarget = projectSelector.getAttribute('data-index')
+        const toDoIndex = e.target.getAttribute('index')
+        if(e.target.parentElement.parentElement.getAttribute('data-priority')=='True'){
+            projectList[projectTarget].tasks[toDoIndex].priority = 'False';
+        }
+        else{
+            projectList[projectTarget].tasks[toDoIndex].priority = 'True';
+        }
+        displayToDo(projectList[projectTarget].tasks);
+    }
+})

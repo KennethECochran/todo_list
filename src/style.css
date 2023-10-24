@@ -17,6 +17,11 @@ body{
 
 }
 
+.header-text{
+    font-size: 32px;
+    margin: 16px;
+}
+
 #sidebar{
     background-color: bisque;
     grid-column: 1/2;
@@ -33,9 +38,9 @@ body{
     align-items: center;
 }
 
-#sidebar > button, #projectLinks > button{
+#sidebar > button, #projectLinks > button, #btnHolder > button{
     height: 3vh;
-    width: 15vw;
+    width: 10vw;
     font-size: 16px;
     margin: 1vh;
 }
@@ -50,9 +55,9 @@ body{
 #toDoHolder{
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     gap: 10px;
+    margin: 1vh;
 }
 
 .card{
@@ -60,10 +65,11 @@ body{
     flex-direction: column;
     align-items: center;
     width: 50vw;
-    height: 8vh;
+    height: 10vh;
     font-size: 36px;
-    background-color: aqua;
+    border: 2px solid black;
 }
+
 
 dialog{
     position: relative;
@@ -75,32 +81,69 @@ dialog{
 form{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 5px;
+    padding: 16px;
 }
 
-input{
-    width: 15vw;
+.holder{
+    display: flex;
 }
 
-.toDoDetails{
-    position: relative;
-    display: inline-block;
+.top{
+    display: flex;
+    flex-direction: column;
+}
+
+.bottom{
+    display: flex;
+    flex-direction: column;
+}
+
+.upper{
+    display: flex;
+}
+
+.lower{
+    display: flex;
 }
 
 .card .toDoDetails{
     visibility: hidden;
 }
 
-.card:hover{
-    height: 200px;
-    width: 200px;
-    background-color: blue;
-    text-align: center;
-}
 .card:hover .toDoDetails{
+    border: 2px solid black;
     visibility: visible;
-    height: 200px;
-    width: 200px;
-    background-color: blue;
-    text-align: center;
+    background-color: bisque;
+    height: 30vh;
+    width: 17vw;
+    position: fixed;
+    left: 82vw;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.card[data-priority = 'False']{
+    background: #00e819
+}
+
+.card[data-priority = 'True']{
+    background: #ff0101
+}
+
+.radioButtons{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.btnHolders{
+    display: flex;
+    gap: 2vw;
+    justify-content: space-between;
+    position: relative;
 }
